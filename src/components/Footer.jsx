@@ -1,7 +1,7 @@
-export default function Footer() {
+export default function Footer(){
   return (
-    <div className="bg-green-700 font-serif text-white w-full px-16 flex justify-between fixed bottom-0">
-      <div className="flex ">
+    <div className="footer bg-green-700 font-serif text-white w-full px-16 flex justify-between fixed bottom-0">
+      <div className="flex">
         <div className="p-6">
           <h2 className="font-bold m-2 text-xl">Legal</h2>
           <ul className="underline">
