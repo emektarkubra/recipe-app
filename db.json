@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "uuid": "29c1eb16-8840-4732-ab91-eab8d4802d03",
+      "email": "admin@admin",
+      "password": "12345",
+      "comments": [],
+      "fav": [],
+      "avatar": "",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
