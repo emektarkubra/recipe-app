@@ -33,12 +33,14 @@ export default function SignIn() {
           className="bg-gray-100 rounded-md border-2 p-4 m-2"
           type="email"
           placeholder="Enter your e-mail"
+          required
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
           className="bg-gray-100 rounded-md border-2 p-4 m-2"
           type="password"
           placeholder="Enter your password"
+          required
         />
         <Link
           to="/forgat-password"
@@ -48,13 +50,13 @@ export default function SignIn() {
         <button
           className="bg-blue-700 p-4 m-2 rounded text-white text-lg"
           type="submit">
-          SIGN IN{" "}
+          SIGN IN
         </button>
         <div className="mx-2">
-          Don't have an account?{" "}
+          Don't have an account?
           <Link to="/sign-up" className="text-blue-800 hover:underline">
             Sign up
-          </Link>{" "}
+          </Link>
         </div>
       </form>
     </div>

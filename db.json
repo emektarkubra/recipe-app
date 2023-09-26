@@ -8,6 +8,15 @@
       "fav": [],
       "avatar": "",
       "id": 1
+    },
+    {
+      "uuid": "bb775988-e4f4-4ab6-9341-a530ec79524c",
+      "email": "deneme@deneme.com",
+      "password": "12345",
+      "comments": [],
+      "fav": [],
+      "avatar": "",
+      "id": 2
     }
   ],
   "comments": [
