@@ -3,10 +3,23 @@ import { Link, NavLink } from "react-router-dom"
 import logo from "../assets/logo.png"
 import SiteContext from "../context"
 import { BsBook, BsBookmarkStar, BsDropletHalf } from "react-icons/bs";
+import { useState } from "react";
 
 
 export default function Header() {
     const { onlineUser, setOnlineUser } = useContext(SiteContext)
+    const [bgColor, setBgColor] = useState("white")
+    const [color, setColor] = useState()
+
+    window.onscroll = () => {
+        if (window.scrollY > 300) {
+            setBgColor("bg-green-700")
+            setColor("text-white")
+        } else {
+            setBgColor("bg-white")
+            setColor("text-base")
+        }
+    }
 
     const handleSignOut = () => {
         localStorage.removeItem("onlineUser")
@@ -14,7 +27,7 @@ export default function Header() {
     }
 
     return (<>
-        <div className="bg-white w-full flex justify-between text-base font-serif m-auto sticky top-0 z-10">
+        <div className={`${bgColor} w-full flex justify-between ${color} font-serif m-auto sticky top-0 z-10`}>
             <div className="flex mx-16">
                 <Link to="/" className="w-20 outline-none"><img className="w-full" src={logo} alt="" /></Link>
                 <Link to="/" className="p-4 m-1 hover:underline underline-offset-4 flex items-center outline-none">HOME</Link>

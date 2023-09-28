@@ -8,7 +8,7 @@ import SimilarRecipes from "../components/SimilarRecipes";
 
 export default function RecipeInfo() {
   return (
-    <div className="border-2 border-red-800 m-10 flex flex-col mx-auto w-4/6">
+    <div className="border-2 m-10 flex flex-col mx-auto w-4/6">
       <Diets />
       <Ingredients />
       <Equipments />

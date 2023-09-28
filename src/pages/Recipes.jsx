@@ -10,7 +10,6 @@ export default function Recipes() {
       const response = await axiosRecipeApi.get("/complexSearch");
       const recipes = await response?.data;
       setRecipes(recipes?.results);
-      // console.log(recipes)
     }
     getData();
   }, []);

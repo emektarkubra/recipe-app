@@ -7,6 +7,18 @@ export const SiteContext = createContext();
 export default function SiteContextProvider({ children }) {
   const [onlineUser, setOnlineUser] = useState();
   const [recipeId, setRecipeId] = useState();
+  const [bgColor, setBgColor] = useState()
+  const [color, setColor] = useState()
+
+  window.onscroll = () => {
+    if (window.scrollY > 300) {
+      setBgColor("green-700")
+      setColor("white")
+    } else {
+      setBgColor("white")
+      setColor("base")
+    }
+  }
 
   useEffect(() => {
     const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser"));
@@ -25,6 +37,8 @@ export default function SiteContextProvider({ children }) {
           setOnlineUser,
           handleGetRecipe,
           recipeId,
+          bgColor,
+          color
         }}>
         {children}
       </SiteContext.Provider>

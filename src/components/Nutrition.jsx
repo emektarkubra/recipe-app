@@ -18,24 +18,24 @@ export default function Nutrition() {
   }, [recipeId]);
   return (
     <>
-      <div className="border-2 m-auto flex flex-col w-5/6">
+      <div className="font-serif m-auto w-5/6 px-8">
         <h2 className="text-3xl p-8">Nutritional Information</h2>
-        <div className="flex flex-wrap px-8">
-          <ul>
-            <li>{`${nutritionInfo?.calories} Calories`}</li>
-            <li>{`${nutritionInfo?.protein} Protein`}</li>
-            <li>{`${nutritionInfo?.fat} Total Fat`}</li>
-            <li>{`${nutritionInfo?.carbs} Carbs`}</li>
+        <div className="flex flex-col justify-center px-8">
+          <ul className="text-lg">
+            <li className="py-1">{`${nutritionInfo?.calories} Calories`}</li>
+            <li className="py-1">{`${nutritionInfo?.protein} Protein`}</li>
+            <li className="py-1">{`${nutritionInfo?.fat} Total Fat`}</li>
+            <li className="py-1">{`${nutritionInfo?.carbs} Carbs`}</li>
             {nutritionInfo?.properties.map((item) => (
               <>
-                <li>{`${item.amount} ${item.unit}${item.name}`}</li>
+                <li className="py-1">{`${item.amount} ${item.unit}${item.name}`}</li>
               </>
             ))}
           </ul>
         </div>
         <h2 className="text-3xl p-8">Limit these</h2>
-        <div className="flex flex-wrap px-8">
-          <table>
+        <div className="px-8">
+          <table className="text-lg w-[15rem]">
             {nutritionInfo?.bad.map((item) => (
               <>
                 <tbody>
@@ -49,8 +49,8 @@ export default function Nutrition() {
           </table>
         </div>
         <h2 className="text-3xl p-8">Get Enough Of These</h2>
-        <div className="flex flex-wrap px-8">
-          <table>
+        <div className="p-8">
+          <table className="text-lg w-[20rem]">
             {nutritionInfo?.good.map((item) => (
 
               <tbody key={item.id}>

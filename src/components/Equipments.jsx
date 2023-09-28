@@ -19,11 +19,11 @@ export default function Equipments() {
   }, [recipeId]);
   return (
     <>
-      <div className="border-2 m-auto flex flex-col w-5/6">
-        <h2 className="border-2 text-3xl p-8">Equipments</h2>
-        <div className="border-2 flex flex-wrap">
+      <div className="font-serif m-auto w-5/6 p-8">
+        <h2 className="text-3xl p-8">Equipments</h2>
+        <div className="m-auto flex flex-wrap">
           {equipments?.map((equipment, index) => (
-            <div key={index} className="w-40 m-5 mx-10 flex flex-col">
+            <div key={index} className="w-40 m-5 mx-1 flex flex-col">
               <GetEquipmentsImages path={equipment.image} />
               <div className="text-center">
                 <span>{equipment.name}</span>
