@@ -31,7 +31,7 @@ export default function SimilarRecipes() {
                 <div className="w-[100%] flex justify-center font-['nyt-cheltenham,georgia,'times new roman',times,serif']">
 
                   <div className="w-full">
-                    <h5 className="card-title text-3xl">{`‘${similarRecipe.title}’`}</h5>
+                    <h5 className="card-title text-3xl hover:text-red-800 hover:underline">{`‘${similarRecipe.title}’`}</h5>
                     <Summary id={similarRecipe.id} />
                   </div>
                   <GetSimilarRecipesImages recipeId={similarRecipe.id} />

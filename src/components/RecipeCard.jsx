@@ -10,10 +10,9 @@ export default function RecipeCard({ recipes }) {
   return (
     <>
       {recipes?.map((recipe) => (<>
-        <div className="">
-
+        <div key={recipe.id} className="w-[70rem]">
           <div className="w-[70rem] border-t-[1px] flex justify-center p-5 font-['nyt-cheltenham,georgia,'times new roman',times,serif']">
-            <Link key={recipe.id} to={`/recipes/${recipe.id}`} onClick={() => handleGetRecipe(recipe.id)} className="">
+            <Link to={`/recipes/${recipe.id}`} onClick={() => handleGetRecipe(recipe.id)} className="w-[70rem]">
               <div className="w-full">
                 <h5 className="card-title text-3xl m-4 hover:text-red-800 hover:underline">{`‘${recipe.title}’`}</h5>
                 <Summary id={recipe.id} />

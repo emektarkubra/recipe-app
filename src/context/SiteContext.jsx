@@ -10,6 +10,15 @@ export default function SiteContextProvider({ children }) {
   const [bgColor, setBgColor] = useState()
   const [color, setColor] = useState()
 
+  const [values, setValues] = useState([]);
+
+  useEffect(() => {
+    const storedValues = JSON.parse(localStorage.getItem("values"));
+    if (storedValues) {
+      setValues(storedValues);
+    }
+  }, []);
+
   window.onscroll = () => {
     if (window.scrollY > 300) {
       setBgColor("green-700")
@@ -38,7 +47,7 @@ export default function SiteContextProvider({ children }) {
           handleGetRecipe,
           recipeId,
           bgColor,
-          color
+          color,values, setValues
         }}>
         {children}
       </SiteContext.Provider>

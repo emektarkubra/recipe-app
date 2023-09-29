@@ -8,6 +8,7 @@ import ForgatPassword from "./pages/ForgatPassword";
 import Home from "./pages/Home";
 import RecipeInfo from "./pages/RecipeInfo";
 import Recipes from "./pages/Recipes";
+import SearchRecipes from "./pages/SearchRecipes";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 
@@ -21,6 +22,7 @@ export default function SiteRoutes() {
           <Route path="/recipes/:id" element = {<RecipeInfo />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/search-recipes" element = {<SearchRecipes />} />
         </Route>
         <Route path="/" element={<AuthLayout />}> {/* giriş yapmamış */}     
           <Route path="/sign-in" element={<SignIn />} />
