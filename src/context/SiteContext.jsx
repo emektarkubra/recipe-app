@@ -1,42 +1,69 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
+import { axiosRecipeApi, axiosUserApi } from "../axios";
 
 export const SiteContext = createContext();
 
 export default function SiteContextProvider({ children }) {
   const [onlineUser, setOnlineUser] = useState();
   const [recipeId, setRecipeId] = useState();
-  const [bgColor, setBgColor] = useState()
-  const [color, setColor] = useState()
-
+  const [bgColor, setBgColor] = useState();
+  const [color, setColor] = useState();
   const [values, setValues] = useState([]);
+  const [favoritesRecipes, setFavoritesRecipes] = useState();
 
   useEffect(() => {
     const storedValues = JSON.parse(localStorage.getItem("values"));
     if (storedValues) {
       setValues(storedValues);
     }
+    const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser"));
+    setFavoritesRecipes(storedOnlineUser?.fav);
   }, []);
 
   window.onscroll = () => {
     if (window.scrollY > 300) {
-      setBgColor("green-700")
-      setColor("white")
+      setBgColor("green-700");
+      setColor("white");
     } else {
-      setBgColor("white")
-      setColor("base")
+      setBgColor("white");
+      setColor("base");
     }
-  }
+  };
 
   useEffect(() => {
     const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser"));
     setOnlineUser(storedOnlineUser);
   }, []);
 
-  function handleGetRecipe(id) {
-    setRecipeId(id);
-  }
+  const handleGetRecipe = (id) => setRecipeId(id);
+
+  const handleAddFavorites = async (id) => {
+    const response = await axiosRecipeApi.get(`/${id}/information`);
+    const data = await response?.data;
+
+    const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser"));
+    let newFavorites;
+    if (storedOnlineUser.fav?.some((item) => item.id === data.id)) {
+      newFavorites = (storedOnlineUser.fav || []).filter(
+        (item) => item.id !== data.id
+      );
+    } else {
+      newFavorites = [
+        ...(storedOnlineUser.fav || []),
+        { id: data.id, title: data.title },
+      ];
+    }
+
+    storedOnlineUser.fav = newFavorites;
+    setFavoritesRecipes(storedOnlineUser?.fav);
+
+    localStorage.setItem("onlineUser", JSON.stringify(storedOnlineUser));
+    axiosUserApi.put(`/users/${storedOnlineUser.id}`, {
+      ...storedOnlineUser,
+    });
+  };
 
   return (
     <>
@@ -47,7 +74,11 @@ export default function SiteContextProvider({ children }) {
           handleGetRecipe,
           recipeId,
           bgColor,
-          color,values, setValues
+          color,
+          values,
+          setValues,
+          handleAddFavorites,
+          favoritesRecipes,
         }}>
         {children}
       </SiteContext.Provider>

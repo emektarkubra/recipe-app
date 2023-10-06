@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { axiosRecipeApi } from "../axios";
 import SiteContext from "../context";
-import { BsHeart, BsBookmark } from "react-icons/bs";
+import { BsHeart, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
 export default function Diets() {
-  const { recipeId } = useContext(SiteContext);
+  const { recipeId, handleAddFavorites, favoritesRecipes } = useContext(SiteContext);
   const [infoDatas, setInfoDatas] = useState();
 
   useEffect(() => {
@@ -26,7 +26,11 @@ export default function Diets() {
           </div>
           <div className="w-4/5 flex text-2xl text-black ">
             <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 m-2"><BsHeart /></button>
-            <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 m-2"><BsBookmark /></button>
+            <button onClick={() => handleAddFavorites(recipeId)} className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 m-2">
+              {
+                favoritesRecipes?.find(item => item.id === recipeId) ? <BsBookmarkFill /> : <BsBookmark />
+              }
+            </button>
           </div>
         </div>
         <img src={infoDatas?.image} alt="" className="w-4/5" />

@@ -15,9 +15,10 @@ export default function SignIn() {
     e.preventDefault();
     const response = await axiosUserApi.get("/users");
     const usersData = await response?.data;
-    if (usersData.find((user) => user.email === email && user.password === password)) {
-      localStorage.setItem("onlineUser", JSON.stringify({ email, password }));
-      setOnlineUser({ email, password });
+    const user = usersData.find((user) => user.email === email && user.password === password)
+    if (user) {
+      localStorage.setItem("onlineUser", JSON.stringify({ ...user }));
+      setOnlineUser(user);
       navigate("/");
     } else {
       alert("Kullanıcı girişi hatalı. Email veya password yanlış");

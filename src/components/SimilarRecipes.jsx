@@ -4,11 +4,11 @@ import { axiosRecipeApi } from "../axios";
 import SiteContext from "../context";
 import GetSimilarRecipesImages from "./GetSimilarRecipesImage";
 import Summary from "./Summary";
-import { BsBookmark, BsHeart } from "react-icons/bs";
+import { BsBookmark, BsBookmarkFill, BsHeart } from "react-icons/bs";
 
 
 export default function SimilarRecipes() {
-  const { recipeId, handleGetRecipe } = useContext(SiteContext);
+  const { recipeId, handleGetRecipe, handleAddFavorites, favoritesRecipes } = useContext(SiteContext);
   const [similarRecipes, setSimilarRecipes] = useState();
 
   useEffect(() => {
@@ -40,7 +40,11 @@ export default function SimilarRecipes() {
               <div className="px-3">
                 <div className="w-4/5 flex text-2xl text-black ">
                   <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 mx-2"><BsHeart /></button>
-                  <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 mx-2"><BsBookmark /></button>
+                  <button onClick={() => handleAddFavorites(similarRecipe.id)} className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 mx-2">
+                    {
+                      favoritesRecipes?.find(item => item.id === similarRecipe.id) ? <BsBookmarkFill /> : <BsBookmark />
+                    }
+                  </button>
                 </div>
                 <button className="text-s px-2">149 likes</button>
               </div>

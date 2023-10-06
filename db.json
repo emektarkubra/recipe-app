@@ -1,13 +1,30 @@
 {
   "users": [
     {
-      "uuid": "78f8add6-a22b-4e01-a094-fe21be996826",
+      "uuid": "bb775988-e4f4-4ab6-9341-a530ec79524d",
       "email": "admin@admin.com",
       "password": "12345",
       "comments": [],
-      "fav": [],
       "avatar": "",
-      "id": 1
+      "id": 1,
+      "fav": [
+        {
+          "id": 203409,
+          "title": "The Californian Smoothie (Avocado-Berry Smoothie)"
+        },
+        {
+          "id": 624643,
+          "title": "Dr. Oz Berry Protein Breakfast Smoothie"
+        },
+        {
+          "id": 632512,
+          "title": "Apple Cranberry Rolls"
+        },
+        {
+          "id": 715497,
+          "title": "Berry Banana Breakfast Smoothie"
+        }
+      ]
     },
     {
       "uuid": "bb775988-e4f4-4ab6-9341-a530ec79524c",
