@@ -14,7 +14,7 @@ export default function Summary({ id }) {
   }, [id]);
   return (
     <div
-      className="text-xl m-4 text-gray-700 font-['nyt-cheltenham,georgia,'times new roman',times,serif']"
+      className="text-sm m-4 text-gray-700 font-['nyt-cheltenham,georgia,'times new roman',times,serif']"
       dangerouslySetInnerHTML={{ __html: summary }}></div>
   );
 }

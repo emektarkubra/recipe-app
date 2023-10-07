@@ -52,7 +52,7 @@ export default function SiteContextProvider({ children }) {
     } else {
       newFavorites = [
         ...(storedOnlineUser.fav || []),
-        { id: data.id, title: data.title },
+        { id: data.id, title: data.title, image: data.image },
       ];
     }
 

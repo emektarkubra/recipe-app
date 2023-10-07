@@ -9,20 +9,24 @@
       "id": 1,
       "fav": [
         {
-          "id": 203409,
-          "title": "The Californian Smoothie (Avocado-Berry Smoothie)"
+          "id": 715415,
+          "title": "Red Lentil Soup with Chicken and Turnips",
+          "image": "https://spoonacular.com/recipeImages/715415-556x370.jpg"
         },
         {
-          "id": 624643,
-          "title": "Dr. Oz Berry Protein Breakfast Smoothie"
+          "id": 795751,
+          "title": "Chicken Fajita Stuffed Bell Pepper",
+          "image": "https://spoonacular.com/recipeImages/795751-556x370.jpg"
         },
         {
-          "id": 632512,
-          "title": "Apple Cranberry Rolls"
+          "id": 646317,
+          "title": "Harvest Hash",
+          "image": "https://spoonacular.com/recipeImages/646317-556x370.jpg"
         },
         {
           "id": 715497,
-          "title": "Berry Banana Breakfast Smoothie"
+          "title": "Berry Banana Breakfast Smoothie",
+          "image": "https://spoonacular.com/recipeImages/715497-556x370.jpg"
         }
       ]
     },

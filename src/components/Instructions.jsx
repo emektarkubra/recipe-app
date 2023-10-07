@@ -21,8 +21,8 @@ export default function Instructions() {
       <div className="font-serif m-auto w-5/6 p-8">
         <h2 className="text-3xl px-8">Instructions</h2>
         <div className="m-auto flex flex-col flex-wrap py-8">
-          {steps?.map((item) => (
-            <div key={item?.id} className="flex m-3 px-8">
+          {steps?.map((item, index) => (
+            <div key={index} className="flex m-3 px-8">
               <div className="font-bold">{`${item.number}-`}</div>
               <div>{item.step}</div>
             </div>

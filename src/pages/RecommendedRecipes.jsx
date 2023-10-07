@@ -16,7 +16,7 @@ export default function RecomendedRecipes({ values }) {
     const fetchDataFromApi = async () => {
       try {
         const response = await axiosRecipeApi.get(
-          `/findByIngredients?ingredients=${ingredients}&number=5`
+          `/findByIngredients?ingredients=${ingredients}&number=10`
         );
         setRecommendedRecipes(response?.data);
       } catch (error) {
@@ -28,12 +28,11 @@ export default function RecomendedRecipes({ values }) {
 
   return (
     <div className="flex flex-col items-center">
-      {values.length > 0 ? (
-        <>
-          <h1 className="text-3xl m-5 p-5">RECOMMENDED RECIPES</h1>
+      {values.length > 0 ? (<>
+        <div className="flex flex-wrap justify-between">
           <RecipeCard recipes={recommendedRecipes} />
-        </>
-      ) : (
+        </div>
+      </>) : (
         <h1 className="text-3xl m-5 p-5">Not Found Recommended Recipes</h1>
       )}
     </div>

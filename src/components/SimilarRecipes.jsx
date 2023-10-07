@@ -24,10 +24,10 @@ export default function SimilarRecipes() {
       <div className="font-serif m-auto w-5/6 px-8">
         <h2 className="text-3xl px-8">Related Recipes</h2>
         <div className="flex flex-wrap justify-between py-8">
-          {similarRecipes?.map((similarRecipe) => (<>
-            <div className="border-2 my-1 p-5" key={similarRecipe.id}>
+          {similarRecipes?.map((similarRecipe, index) => (<>
+            <div key={index} className="border-2 my-1 p-5" >
 
-              <Link key={similarRecipe.id} to={`/recipes/${similarRecipe.id}`} onClick={() => handleGetRecipe(similarRecipe?.id)} className="" >
+              <Link to={`/recipes/${similarRecipe.id}`} onClick={() => handleGetRecipe(similarRecipe?.id)} className="" >
                 <div className="w-[100%] flex justify-center font-['nyt-cheltenham,georgia,'times new roman',times,serif']">
 
                   <div className="w-full">

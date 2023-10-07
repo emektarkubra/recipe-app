@@ -26,34 +26,27 @@ export default function Nutrition() {
             <li className="py-1">{`${nutritionInfo?.protein} Protein`}</li>
             <li className="py-1">{`${nutritionInfo?.fat} Total Fat`}</li>
             <li className="py-1">{`${nutritionInfo?.carbs} Carbs`}</li>
-            {nutritionInfo?.properties.map((item) => (
-              <>
-                <li className="py-1">{`${item.amount} ${item.unit}${item.name}`}</li>
-              </>
-            ))}
+            {nutritionInfo?.properties.map((item, index) => (<li key={index} className="py-1">{`${item.amount} ${item.unit}${item.name}`}</li>))}
           </ul>
         </div>
         <h2 className="text-3xl p-8">Limit these</h2>
         <div className="px-8">
           <table className="text-lg w-[15rem]">
-            {nutritionInfo?.bad.map((item) => (
-              <>
-                <tbody>
-                  <tr>
-                    <td>{`${item.title}`}</td>
-                    <td>{`${item.amount}`}</td>
-                  </tr>
-                </tbody>
-              </>
+            {nutritionInfo?.bad.map((item, index) => (
+              <tbody key={index}>
+                <tr>
+                  <td>{`${item.title}`}</td>
+                  <td>{`${item.amount}`}</td>
+                </tr>
+              </tbody>
             ))}
           </table>
         </div>
         <h2 className="text-3xl p-8">Get Enough Of These</h2>
         <div className="p-8">
           <table className="text-lg w-[20rem]">
-            {nutritionInfo?.good.map((item) => (
-
-              <tbody key={item.id}>
+            {nutritionInfo?.good.map((item, index) => (
+              <tbody key={index}>
                 <tr>
                   <td>{`${item.title}`}</td>
                   <td>{`${item.amount}`}</td>

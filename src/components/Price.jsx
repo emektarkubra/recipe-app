@@ -30,8 +30,8 @@ export default function Price() {
               </tr>
             </thead>
             <tbody>
-              {price?.ingredients?.map((item) => (
-                <tr key={item.id}>
+              {price?.ingredients?.map((item, index) => (
+                <tr key={index}>
                   <td className="p-2">{`${item.amount.us.value} ${item.amount.us.unit} ${item.name}`}</td>
                   <td className="p-2">{`$${item.price}`}</td>
                 </tr>

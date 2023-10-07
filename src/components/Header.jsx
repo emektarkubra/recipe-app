@@ -11,7 +11,7 @@ export default function Header() {
     const [color, setColor] = useState()
 
     window.onscroll = () => {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 100) {
             setBgColor("bg-green-700")
             setColor("text-white")
         } else {
@@ -36,32 +36,32 @@ export default function Header() {
         <div className="">
             {
                 onlineUser && (<>
-                    <div className="flex flex-col justify-center overflow-y-hidden h-[32rem] ">
+                    <div className="flex flex-col justify-center overflow-y-hidden h-[25rem] ">
                         <img
                             className=""
                             src="https://spoonacular.com/application/frontend/images/wallpaper1.jpg"
                             alt=""
                         />
                     </div>
-                    <div className="bg-gray-800/50 h-[32rem] absolute top-16 left-0 right-0">
+                    <div className="bg-gray-800/50 h-[25rem] absolute top-16 left-0 right-0">
                         <h1 className="text-white text-6xl p-5 text-center">Enjoy Your Food</h1>
-                        <div className="flex justify-around text-white text-center text-4xl">
+                        <div className="flex justify-around text-white text-center text-4xl w-[90%] m-auto">
                             <NavLink to="/recipes">
-                                <div className="border-4 flex flex-col justify-center items-center bg-green-800/50 w-80 h-80 p-14 rounded-full hover:bg-green-800/60">
-                                    <BsBook className="text-7xl" />
-                                    <h1>Look at the Recipes</h1>
+                                <div className="border-4 flex flex-col justify-center items-center bg-green-800/50 w-[17rem] h-[17rem] p-14 rounded-full hover:bg-green-800/60">
+                                    <BsBook className="text-5xl" />
+                                    <h1 className="text-2xl">Look at the Recipes</h1>
                                 </div>
                             </NavLink>
                             <NavLink to="/search-recipes">
-                                <div className="border-4 flex flex-col justify-center items-center bg-pink-800/50 w-80 h-80 p-14 rounded-full hover:bg-pink-800/60">
-                                    <BsDropletHalf className="text-7xl" />
-                                    <h1>What you have in your fridge?</h1>
+                                <div className="border-4 flex flex-col justify-center items-center bg-pink-800/50 w-[17rem] h-[17rem] p-14 rounded-full hover:bg-pink-800/60">
+                                    <BsDropletHalf className="text-5xl" />
+                                    <h1 className="text-2xl w-56">What you have in your fridge?</h1>
                                 </div>
                             </NavLink>
                             <NavLink to="/favorites">
-                                <div className="border-4 flex flex-col justify-center items-center bg-orange-800/50 w-80 h-80 p-14 rounded-full hover:bg-orange-800/60">
-                                    <BsBookmarkStar className="text-7xl" />
-                                    <h1>Your Favorite Recipes</h1>
+                                <div className="border-4 flex flex-col justify-center items-center bg-orange-800/50 w-[17rem] h-[17rem] p-14 rounded-full hover:bg-orange-800/60">
+                                    <BsBookmarkStar className="text-5xl" />
+                                    <h1 className="text-2xl w-56">Your Favorite Recipes</h1>
                                 </div>
                             </NavLink>
                         </div>

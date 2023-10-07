@@ -40,7 +40,7 @@ export default function SearchRecipes() {
       <form>
         <div className="flex justify-center w-[40%] m-auto w-[100%]">
           <input
-            className="bg-gray-100 rounded-md border-2 p-4 w-[80%] m-2 outline-0"
+            className="bg-gray-100 rounded-md border-2 p-4 w-[80%] h-[7vh] m-2 outline-0"
             placeholder="What's in your fridge?"
             onChange={(e) => setInputValue(e.target.value)}
             type="text"
@@ -53,7 +53,7 @@ export default function SearchRecipes() {
           </datalist>
           <button
             onClick={getValues}
-            className="bg-blue-700 rounded-md p-4 w-[20%] m-2 text-white text-lg outline-0">
+            className="bg-green-600 rounded-md w-[20%] h-[7vh] m-2 text-white text-lg outline-0">
             Add
           </button>
         </div>
@@ -62,20 +62,20 @@ export default function SearchRecipes() {
         {values?.map((value, index) => (
           <div
             key={index}
-            className="bg-gray-100 rounded text-center w-[15%] p-2 m-2">
-            <button
-              onClick={(e) =>
-                setValues(
-                  values?.filter(
-                    (item) => values.indexOf(value) !== values.indexOf(item)
-                  )
-                )
-              }
-              className="float-right">
-              x
-            </button>
+            className="flex justify-between bg-gray-100 rounded text-center p-2 m-2">
             <div className="flex justify-between flex">
-              <div className="p-1">{value}</div>
+              <div className="px-3">{value}</div>
+              <button
+                onClick={(e) =>
+                  setValues(
+                    values?.filter(
+                      (item) => values.indexOf(value) !== values.indexOf(item)
+                    )
+                  )
+                }
+                className="">
+                <span>x</span>
+              </button>
             </div>
           </div>
         ))}
