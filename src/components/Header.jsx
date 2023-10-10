@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function Header() {
-    const { onlineUser, setOnlineUser } = useContext(SiteContext)
+    const { onlineUser, setOnlineUser,setValues } = useContext(SiteContext)
     const [bgColor, setBgColor] = useState("white")
     const [color, setColor] = useState()
     const [backButtonVisiblity, setBackButtonVisiblity] = useState(false)
@@ -23,6 +23,8 @@ export default function Header() {
 
     const handleSignOut = () => {
         localStorage.removeItem("onlineUser")
+        localStorage.removeItem("values")
+        setValues([])
         setOnlineUser()
         setBackButtonVisiblity(false)
     }

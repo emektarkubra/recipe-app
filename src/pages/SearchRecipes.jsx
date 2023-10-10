@@ -36,9 +36,9 @@ export default function SearchRecipes() {
   };
 
   return (
-    <div className="p-14">
+    <div className="py-20">
       <form>
-        <div className="flex justify-center w-[40%] m-auto w-[100%]">
+        <div className="flex justify-center w-[40%] m-auto">
           <input
             className="bg-gray-100 rounded-md border-2 p-4 w-[80%] h-[7vh] m-2 outline-0"
             placeholder="What's in your fridge?"

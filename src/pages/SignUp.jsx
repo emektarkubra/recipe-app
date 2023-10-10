@@ -42,7 +42,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="max-w-lg m-auto mt-14 flex flex-col font-serif">
+    <div className="max-w-lg m-auto my-16 flex flex-col font-serif">
       <h2 className="text-2xl m-2">Create an Account</h2>
       <form onSubmit={handleSignUp} className="flex flex-col">
         <input

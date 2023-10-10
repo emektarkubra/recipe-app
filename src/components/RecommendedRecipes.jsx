@@ -27,7 +27,7 @@ export default function RecomendedRecipes({ values }) {
   }, [values]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-[95%] m-auto">
       {values.length > 0 ? (<>
         <div className="flex flex-wrap justify-center">
           <RecipeCard recipes={recommendedRecipes} />

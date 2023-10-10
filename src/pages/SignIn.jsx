@@ -20,13 +20,14 @@ export default function SignIn() {
       localStorage.setItem("onlineUser", JSON.stringify({ ...user }));
       setOnlineUser(user);
       navigate("/");
+      alert("Giriş yapıldı")
     } else {
       alert("Kullanıcı girişi hatalı. Email veya password yanlış");
     }
   };
 
   return (
-    <div className="max-w-lg m-auto mt-14 flex flex-col font-serif">
+    <div className="max-w-lg m-auto my-16 flex flex-col font-serif">
       <h2 className="text-2xl m-2">Enter your account </h2>
       <form onSubmit={handleSignIn} className="flex flex-col">
         <input
