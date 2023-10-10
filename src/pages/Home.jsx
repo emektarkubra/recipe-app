@@ -28,7 +28,7 @@ export default function Home() {
           <input onChange={handleOnchange} type="text" placeholder="Filter recipe.." className="border-2 w-[100%] rounded p-1" />
         </div>
         {
-          filteredRecipes.length === 0 ? <h1 className="text-2xl text-center">No more notes to display.</h1> : <div className="flex flex-wrap">
+          filteredRecipes.length === 0 ? <h1 className="text-2xl text-center">No more notes to display.</h1> : <div className="flex flex-wrap justify-center">
             <RecipeCard recipes={filteredRecipes} />
           </div>
         }

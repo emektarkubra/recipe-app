@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { axiosRecipeApi } from "../axios";
-import RecipeCard from "../components/RecipeCard";
+import RecipeCard from "./RecipeCard";
 
 export default function RecomendedRecipes({ values }) {
   const [recommendedRecipes, setRecommendedRecipes] = useState();
@@ -29,7 +29,7 @@ export default function RecomendedRecipes({ values }) {
   return (
     <div className="flex flex-col items-center">
       {values.length > 0 ? (<>
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-center">
           <RecipeCard recipes={recommendedRecipes} />
         </div>
       </>) : (

@@ -9,17 +9,17 @@ export default function Favorites() {
     const { handleAddFavorites, handleGetRecipe } = useContext(SiteContext)
     const [favList, setFavList] = useState()
 
+    const favoriteList = JSON.parse(localStorage.getItem("onlineUser")).fav
     useEffect(() => {
-        const favoriteList = JSON.parse(localStorage.getItem("onlineUser")).fav
         setFavList(favoriteList)
-    }, [favList?.length])
+    }, [favoriteList?.length])
 
     return (
         <div className="p-14 w-[95%] m-auto">
             <h1 className="m-5 py-3 text-3xl flex justify-center">FAVORITES</h1>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap ">
                 {favList?.map((fav) => (
-                    <div key={fav.id} className="border-2 flex flex-col justify-between w-[23%] m-2 p-2">
+                    <div key={fav.id} className="border-2 flex flex-col justify-between w-[23%] min-w-[200px] m-2 p-2">
                         <Link
                             to={`/recipes/${fav.id}`}
                             onClick={() => handleGetRecipe(fav.id)}
@@ -29,11 +29,13 @@ export default function Favorites() {
                                 <div className="">{fav.title}</div>
                             </div>
                         </Link>
-                        <button
-                            onClick={() => handleAddFavorites(fav.id)}
-                            className="bg-red-700 w-[5rem] rounded-md px-2 text-white text-base outline-0">
-                            Remove
-                        </button>
+                        <div className="flex justify-end  px-2">
+                            <button
+                                onClick={() => handleAddFavorites(fav.id)}
+                                className="bg-red-700 w-[5rem] rounded-md text-white text-base outline-0">
+                                Remove
+                            </button>
+                        </div>
 
                     </div>
                 ))}
@@ -42,4 +44,3 @@ export default function Favorites() {
         </div>
     )
 }
-// flex justify-center items-center 

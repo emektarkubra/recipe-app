@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { axiosSearchRecipeApi } from "../axios/axiosSearchRecipeApi";
+import RecomendedRecipes from "../components/RecommendedRecipes";
 import SiteContext from "../context";
-import RecomendedRecipes from "./RecommendedRecipes";
 
 export default function SearchRecipes() {
   const { values, setValues } = useContext(SiteContext);

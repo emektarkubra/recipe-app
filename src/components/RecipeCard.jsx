@@ -11,7 +11,7 @@ export default function RecipeCard({ recipes }) {
     <>
       {recipes?.map((recipe) => (
 
-        <div key={recipe.id} className="border-2 flex flex-col justify-between items-start w-[32%] m-1 p-4">
+        <div key={recipe.id} className="border-2 flex flex-col justify-between items-start w-[24%] min-w-[200px] m-1 p-4">
           {recipe.image && (
             <img src={recipe.image} className="w-[100%] rounded" alt="..." />
           )}
@@ -20,7 +20,7 @@ export default function RecipeCard({ recipes }) {
             onClick={() => handleGetRecipe(recipe.id)}
             className="">
             <div className="w-full">
-              <h5 className="card-title text-xl m-3 hover:text-red-800 hover:underline">{`‘${recipe.title}’`}</h5>
+              <h5 className="card-title text-lg m-3 hover:text-red-800 hover:underline">{`‘${recipe.title}’`}</h5>
               <Summary id={recipe.id} />
             </div>
           </Link>

@@ -9,6 +9,16 @@
       "id": 1,
       "fav": [
         {
+          "id": 716406,
+          "title": "Asparagus and Pea Soup: Real Convenience Food",
+          "image": "https://spoonacular.com/recipeImages/716406-556x370.jpg"
+        },
+        {
+          "id": 782585,
+          "title": "Cannellini Bean and Asparagus Salad with Mushrooms",
+          "image": "https://spoonacular.com/recipeImages/782585-556x370.jpg"
+        },
+        {
           "id": 715415,
           "title": "Red Lentil Soup with Chicken and Turnips",
           "image": "https://spoonacular.com/recipeImages/715415-556x370.jpg"
@@ -19,14 +29,9 @@
           "image": "https://spoonacular.com/recipeImages/795751-556x370.jpg"
         },
         {
-          "id": 646317,
-          "title": "Harvest Hash",
-          "image": "https://spoonacular.com/recipeImages/646317-556x370.jpg"
-        },
-        {
-          "id": 715497,
-          "title": "Berry Banana Breakfast Smoothie",
-          "image": "https://spoonacular.com/recipeImages/715497-556x370.jpg"
+          "id": 782601,
+          "title": "Red Kidney Bean Jambalaya",
+          "image": "https://spoonacular.com/recipeImages/782601-556x370.jpg"
         }
       ]
     },
