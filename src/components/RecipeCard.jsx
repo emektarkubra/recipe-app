@@ -11,7 +11,7 @@ export default function RecipeCard({ recipes }) {
     <>
       {recipes?.map((recipe) => (
 
-        <div key={recipe.id} className="border-2 flex flex-col justify-between items-start w-[32%] my-2 p-4">
+        <div key={recipe.id} className="border-2 flex flex-col justify-between items-start w-[32%] m-1 p-4">
           {recipe.image && (
             <img src={recipe.image} className="w-[100%] rounded" alt="..." />
           )}

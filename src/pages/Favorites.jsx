@@ -2,17 +2,15 @@ import { useContext } from "react"
 import { useState } from "react"
 import { useEffect } from "react"
 import SiteContext from "../context"
-import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
 export default function Favorites() {
-    const { handleAddFavorites, handleGetRecipe, recipeId } = useContext(SiteContext)
+    const { handleAddFavorites, handleGetRecipe } = useContext(SiteContext)
     const [favList, setFavList] = useState()
 
     useEffect(() => {
         const favoriteList = JSON.parse(localStorage.getItem("onlineUser")).fav
-
         setFavList(favoriteList)
     }, [favList?.length])
 

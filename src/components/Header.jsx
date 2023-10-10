@@ -29,8 +29,8 @@ export default function Header() {
 
     return (<>
         <div className={`${bgColor} w-full flex justify-between ${color} font-serif m-auto sticky top-0 z-10 pl-3`}>
-            <Link onClick={() => setBackButtonVisiblity(false)} to="/" className={`w-[10.5%] m-1 hover:underline underline-offset-4 flex justify-between items-center outline-none text-sm ${backButtonVisiblity ? `visible` : `invisible`}`}>
-                <BsArrowLeft className="" />
+            <Link onClick={() => setBackButtonVisiblity(false)} to="/" className={` m-1 hover:underline underline-offset-4 flex justify-between items-center outline-none text-sm ${backButtonVisiblity ? `visible` : `invisible`}`}>
+                <BsArrowLeft className="mr-2" />
                 go back home page
             </Link>
             <div className="flex p-1">
