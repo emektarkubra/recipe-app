@@ -7,10 +7,11 @@ import Favorites from "./pages/Favorites";
 import ForgatPassword from "./pages/ForgatPassword";
 import Home from "./pages/Home";
 import RecipeInfo from "./pages/RecipeInfo";
-import Recipes from "./pages/Recipes";
+import Recipes from "./pages/DailyMeals";
 import SearchRecipes from "./pages/SearchRecipes";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import DailyMeals from "./pages/DailyMeals";
 
 export default function SiteRoutes() {
   return (
@@ -18,13 +19,14 @@ export default function SiteRoutes() {
       <Routes>
         <Route path="/" element={<MainLayout />}> {/* giriş yapmış */}
           <Route path="/" element={<Home />} />
-          <Route path="/recipes" element={<Recipes />}/>
-          <Route path="/recipes/:id" element = {<RecipeInfo />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:id" element={<RecipeInfo />} />
+          <Route path="/daily-meals" element={<DailyMeals />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/search-recipes" element = {<SearchRecipes />} />
+          <Route path="/search-recipes" element={<SearchRecipes />} />
         </Route>
-        <Route path="/" element={<AuthLayout />}> {/* giriş yapmamış */}     
+        <Route path="/" element={<AuthLayout />}> {/* giriş yapmamış */}
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgat-password" element={<ForgatPassword />} />
