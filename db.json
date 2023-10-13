@@ -19,44 +19,6 @@
           "image": "https://spoonacular.com/recipeImages/715415-556x370.jpg"
         }
       ]
-    },
-    {
-      "uuid": "bb775988-e4f4-4ab6-9341-a530ec79524c",
-      "email": "deneme@deneme.com",
-      "password": "12345",
-      "comments": [],
-      "fav": [],
-      "avatar": "",
-      "id": 2
-    },
-    {
-      "uuid": "6b692a19-38d3-4eee-80ff-3af2ffef800e",
-      "email": "yzzemektar@gmail.com",
-      "password": "3456789",
-      "comments": [],
-      "fav": [
-        {
-          "id": 643901,
-          "title": "Frozen Chocolate-Dipped Peanut Butter Banana Bites",
-          "image": "https://spoonacular.com/recipeImages/643901-556x370.jpg"
-        },
-        {
-          "id": 634048,
-          "title": "Banana Chocolate Pudding",
-          "image": "https://spoonacular.com/recipeImages/634048-556x370.jpg"
-        }
-      ],
-      "avatar": "",
-      "id": 3
-    },
-    {
-      "uuid": "287fe028-c127-414b-8e2a-a20ac640ac00",
-      "email": "emektarkubra@gmail.com",
-      "password": "12345",
-      "comments": [],
-      "fav": [],
-      "avatar": "",
-      "id": 4
     }
   ],
   "comments": [

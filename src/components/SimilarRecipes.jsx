@@ -39,14 +39,12 @@ export default function SimilarRecipes() {
               </Link>
               <div className="px-3">
                 <div className="w-4/5 flex text-2xl text-black ">
-                  <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 mx-2"><BsHeart /></button>
                   <button onClick={() => handleAddFavorites(similarRecipe.id)} className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 mx-2">
                     {
                       favoritesRecipes?.find(item => item.id === similarRecipe.id) ? <BsBookmarkFill /> : <BsBookmark />
                     }
                   </button>
                 </div>
-                <button className="text-s px-2">149 likes</button>
               </div>
 
             </div>

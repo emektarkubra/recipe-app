@@ -12,6 +12,9 @@ export default function SiteContextProvider({ children }) {
   const [color, setColor] = useState();
   const [values, setValues] = useState([]);
   const [favoritesRecipes, setFavoritesRecipes] = useState();
+  const [isSuccessSignUp, setIsSuccessSignUp] = useState(false);
+  const [isSignIn, setSignIn] = useState(false);
+  const [isUpdatedPassword, setIsUpdatedPassword] = useState(false)
 
   useEffect(() => {
     const storedValues = JSON.parse(localStorage.getItem("values"));
@@ -79,6 +82,9 @@ export default function SiteContextProvider({ children }) {
           setValues,
           handleAddFavorites,
           favoritesRecipes,
+          isSuccessSignUp, setIsSuccessSignUp,
+          isSignIn, setSignIn,
+          isUpdatedPassword, setIsUpdatedPassword
         }}>
         {children}
       </SiteContext.Provider>

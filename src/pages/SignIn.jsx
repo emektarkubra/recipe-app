@@ -2,14 +2,17 @@ import { useContext } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { axiosUserApi } from "../axios";
+import Alert from "../components/Alert";
 import SiteContext from "../context";
 
 export default function SignIn() {
   const navigate = useNavigate();
 
-  const { setOnlineUser } = useContext(SiteContext);
+  const { setOnlineUser, isSuccessSignUp, setSignIn } = useContext(SiteContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [isWrongEmailOrPassword, setIsWrongEmailOrPassword] = useState(false)
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -20,9 +23,17 @@ export default function SignIn() {
       localStorage.setItem("onlineUser", JSON.stringify({ ...user }));
       setOnlineUser(user);
       navigate("/");
-      alert("Giriş yapıldı")
+      // alert("Giriş yapıldı")
+      setSignIn(true)
+      setTimeout(() => {
+        setSignIn(false)
+      }, 2000);
     } else {
-      alert("Kullanıcı girişi hatalı. Email veya password yanlış");
+      // alert("Kullanıcı girişi hatalı. Email veya password yanlış");
+      setIsWrongEmailOrPassword(true)
+      setTimeout(() => {
+        setIsWrongEmailOrPassword(false)
+      }, 2000);
     }
   };
 
@@ -61,6 +72,14 @@ export default function SignIn() {
           </Link>
         </div>
       </form>
+      {
+        isSuccessSignUp ? <Alert title="Success" message="You have been signed up" color="green" icon="✓" /> : null
+      }
+
+      {
+        isWrongEmailOrPassword ? <Alert title="Danger" message="Email or password is incorrect!" color="red" icon="✗" /> : null
+      }
     </div>
   );
+
 }

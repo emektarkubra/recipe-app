@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { axiosRecipeApi } from "../axios";
+import Alert from "../components/Alert";
 import RecipeCard from "../components/RecipeCard";
+import SiteContext from "../context";
 
 export default function Home() {
+  const { isSignIn } = useContext(SiteContext)
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([])
   useEffect(() => {
@@ -31,6 +34,9 @@ export default function Home() {
           filteredRecipes.length === 0 ? <h1 className="text-2xl text-center">No more notes to display.</h1> : <div className="flex flex-wrap justify-center">
             <RecipeCard recipes={filteredRecipes} />
           </div>
+        }
+        {
+          isSignIn ? <Alert title="Success" message="Giriş yapıldı" color="green" icon="✓" /> : null
         }
 
       </div>

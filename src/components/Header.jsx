@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function Header() {
-    const { onlineUser, setOnlineUser,setValues } = useContext(SiteContext)
+    const { onlineUser, setOnlineUser, setValues } = useContext(SiteContext)
     const [bgColor, setBgColor] = useState("white")
     const [color, setColor] = useState()
     const [backButtonVisiblity, setBackButtonVisiblity] = useState(false)
@@ -30,7 +30,7 @@ export default function Header() {
     }
 
     return (<>
-        <div className={`${bgColor} w-full flex justify-between ${color} font-serif m-auto sticky top-0 z-10 pl-3`}>
+        <div className={`${bgColor} shadow-lg w-full flex justify-between ${color} font-serif m-auto sticky top-0 z-10 pl-3`}>
             <Link onClick={() => setBackButtonVisiblity(false)} to="/" className={` m-1 hover:underline underline-offset-4 flex justify-between items-center outline-none text-sm ${backButtonVisiblity ? `visible` : `invisible`}`}>
                 <BsArrowLeft className="mr-2" />
                 go back home page
