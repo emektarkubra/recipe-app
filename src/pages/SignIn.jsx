@@ -58,7 +58,7 @@ export default function SignIn() {
         <Link
           to="/forgat-password"
           className="ml-auto mx-2 text-blue-800 hover:underline">
-          Forgat your password ?
+          Change your password ?
         </Link>
         <button
           className="bg-blue-700 p-4 m-2 rounded text-white text-lg"

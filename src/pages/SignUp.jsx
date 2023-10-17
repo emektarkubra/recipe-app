@@ -29,7 +29,6 @@ export default function SignUp() {
             uuid: uuidv4(),
             email: email,
             password: password,
-            comments: [],
             fav: [],
             avatar: "",
           })

@@ -14,7 +14,10 @@ export default function SiteContextProvider({ children }) {
   const [favoritesRecipes, setFavoritesRecipes] = useState();
   const [isSuccessSignUp, setIsSuccessSignUp] = useState(false);
   const [isSignIn, setSignIn] = useState(false);
-  const [isUpdatedPassword, setIsUpdatedPassword] = useState(false)
+  const [isUpdatedPassword, setIsUpdatedPassword] = useState(false);
+  const [isOpenDropDown, setIsOpenDropDown] = useState(false);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
+  const [imageUrl, setImageUrl] = useState();
 
   useEffect(() => {
     const storedValues = JSON.parse(localStorage.getItem("values"));
@@ -62,7 +65,7 @@ export default function SiteContextProvider({ children }) {
     storedOnlineUser.fav = newFavorites;
     setFavoritesRecipes(storedOnlineUser?.fav);
 
-    localStorage.setItem("onlineUser", JSON.stringify(storedOnlineUser));
+    onlineUser;
     axiosUserApi.put(`/users/${storedOnlineUser.id}`, {
       ...storedOnlineUser,
     });
@@ -82,9 +85,18 @@ export default function SiteContextProvider({ children }) {
           setValues,
           handleAddFavorites,
           favoritesRecipes,
-          isSuccessSignUp, setIsSuccessSignUp,
-          isSignIn, setSignIn,
-          isUpdatedPassword, setIsUpdatedPassword
+          isSuccessSignUp,
+          setIsSuccessSignUp,
+          isSignIn,
+          setSignIn,
+          isUpdatedPassword,
+          setIsUpdatedPassword,
+          isOpenDropDown,
+          setIsOpenDropDown,
+          isVisibleModal,
+          setIsVisibleModal,
+          imageUrl,
+          setImageUrl,
         }}>
         {children}
       </SiteContext.Provider>
