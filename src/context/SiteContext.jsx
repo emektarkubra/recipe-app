@@ -46,29 +46,38 @@ export default function SiteContextProvider({ children }) {
   const handleGetRecipe = (id) => setRecipeId(id);
 
   const handleAddFavorites = async (id) => {
-    const response = await axiosRecipeApi.get(`/${id}/information`);
-    const data = await response?.data;
+    try {
+      const response = await axiosRecipeApi.get(`/${id}/information`);
+      const data = response?.data;
 
-    const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser"));
-    let newFavorites;
-    if (storedOnlineUser.fav?.some((item) => item.id === data.id)) {
-      newFavorites = (storedOnlineUser.fav || []).filter(
-        (item) => item.id !== data.id
-      );
-    } else {
-      newFavorites = [
-        ...(storedOnlineUser.fav || []),
-        { id: data.id, title: data.title, image: data.image },
-      ];
+      if (!data) {
+        return;
+      }
+
+      const storedOnlineUser = JSON.parse(localStorage.getItem("onlineUser")) || { fav: [] };
+
+      let newFavorites;
+
+      if (storedOnlineUser.fav.some((item) => item.id === data.id)) {
+        newFavorites = storedOnlineUser.fav.filter((item) => item.id !== data.id);
+      } else {
+        newFavorites = [
+          ...storedOnlineUser.fav,
+          { id: data.id, title: data.title, image: data.image },
+        ];
+      }
+
+      storedOnlineUser.fav = newFavorites;
+      localStorage.setItem("onlineUser", JSON.stringify(storedOnlineUser));
+
+      setFavoritesRecipes(newFavorites);
+
+      await axiosUserApi.put(`/users/${storedOnlineUser.id}`, {
+        ...storedOnlineUser,
+      });
+    } catch (err) {
+      console.error("Bir hata oluştu: ", err);
     }
-
-    storedOnlineUser.fav = newFavorites;
-    setFavoritesRecipes(storedOnlineUser?.fav);
-
-    onlineUser;
-    axiosUserApi.put(`/users/${storedOnlineUser.id}`, {
-      ...storedOnlineUser,
-    });
   };
 
   return (

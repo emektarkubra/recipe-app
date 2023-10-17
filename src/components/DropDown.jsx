@@ -17,7 +17,7 @@ export default function DropDown() {
     }
 
     return (
-        <div className={`${isOpenDropDown ? "block" : "hidden"} fixed right-0 my-5 mx-2 p-2 w-[10rem] bg-green-700 text-white`}>
+        <div className={`${isOpenDropDown ? "block" : "hidden"} fixed right-0 top-12 my-5 mx-2 p-2 w-[10rem] bg-green-700 text-white`}>
             <button onClick={() => setIsVisibleModal(true)} className="p-2 float-left">Change avatar</button>
             <hr className="clear-both" />
             <button onClick={handleDeleteAvatar} className="p-2 float-left">Delete avatar</button>

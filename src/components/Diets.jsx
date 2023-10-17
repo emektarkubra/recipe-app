@@ -24,7 +24,6 @@ export default function Diets() {
             <div className="text-[1.2rem]" dangerouslySetInnerHTML={{ __html: infoDatas?.summary }}></div>
           </div>
           <div className="w-4/5 flex text-2xl text-black ">
-            <button className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 m-2"><BsHeart /></button>
             <button onClick={() => handleAddFavorites(recipeId)} className="flex justify-center items-center border-[1px] border-gray-200 w-14 h-14 p-2 rounded-full hover:bg-gray-200 m-2">
               {
                 favoritesRecipes?.find(item => item.id === recipeId) ? <BsBookmarkFill /> : <BsBookmark />

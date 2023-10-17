@@ -5,7 +5,33 @@
       "email": "admin@admin.com",
       "password": "12345",
       "id": 1,
-      "fav": [],
+      "fav": [
+        {
+          "id": 715497,
+          "title": "Berry Banana Breakfast Smoothie",
+          "image": "https://spoonacular.com/recipeImages/715497-556x370.jpg"
+        },
+        {
+          "id": 715415,
+          "title": "Red Lentil Soup with Chicken and Turnips",
+          "image": "https://spoonacular.com/recipeImages/715415-556x370.jpg"
+        },
+        {
+          "id": 361911,
+          "title": "Chicken with Turnips and Pomegranate Sauce",
+          "image": "https://spoonacular.com/recipeImages/361911-556x370.jpg"
+        },
+        {
+          "id": 985015,
+          "title": "one-pan parmesan chicken with turnips and asparagus",
+          "image": "https://spoonacular.com/recipeImages/985015-556x370.jpg"
+        },
+        {
+          "id": 626739,
+          "title": "Ginger Miso Soup with Tokyo Turnips",
+          "image": "https://spoonacular.com/recipeImages/626739-556x370.jpg"
+        }
+      ],
       "avatar": ""
     }
   ]

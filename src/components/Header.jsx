@@ -97,8 +97,8 @@ export default function Header() {
                             <button onClick={handleSignOut} className="p-4 hover:underline underline-offset-4 flex items-center outline-none">Sign out</button>
                             <button onClick={() => setIsOpenDropDown(prev => !prev)} className="w-[2.5rem] h-[2.5rem] outline-none my-2 mr-4">
                                 <LazyLoadImage src={onlineUser?.avatar} />
-                                <DropDown />
                             </button>
+                            <DropDown />
                         </>)
                 }
             </div>
@@ -112,7 +112,7 @@ export default function Header() {
                             alt=""
                         />
                     </div>
-                    <div className="box bg-gray-800/50 h-[35vw] absolute top-16 left-0 right-0">
+                    <div className="box bg-gray-800/50 h-[35vw] absolute top-16 left-0 right-0 w-[100%]">
                         <h1 className="head text-white text-[4vw] text-6xl p-5 text-center">Enjoy Your Food</h1>
                         <div className="navs flex justify-around text-white text-center text-[18vw] w-[90%] m-auto ">
                             <NavLink className="navlink" onClick={() => setBackButtonVisiblity(true)} to="/search-recipes">
